@@ -126,7 +126,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.detailsUtilisateur', {
-    url: '/detailsUtilisateur',
+    url: '/detailsUtilisateur/:userId',
     views: {
       'side-menu21': {
         templateUrl: 'templates/detailsUtilisateur.html',
@@ -149,7 +149,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.amisRestaurant', {
-    url: '/amisRestaurant',
+    url: '/amisRestaurant/:restaurantId',
     views: {
       'side-menu21': {
         templateUrl: 'templates/amisRestaurant.html',

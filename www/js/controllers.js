@@ -127,7 +127,7 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, sharedVariables) {
   sharedVariables.getRestaurants.success(function (restaurants) {
-    $scope.restaurant = $scope.suggestionRestaurant = _.filter(restaurants,function (restaurant) {
+    $scope.restaurant = _.filter(restaurants,function (restaurant) {
       return restaurant.id == $stateParams.restaurantId;
     })[0];
   });
@@ -142,12 +142,20 @@ function ($scope, $stateParams, sharedVariables) {
   });
 }])
 
-.controller('detailsUtilisateurCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('detailsUtilisateurCtrl', ['$scope', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, sharedVariables) {
+  sharedVariables.getUsers.success(function (users) {
+    $scope.user = _.filter(users,function (user) {
+      return user.id == $stateParams.userId;
+    })[0];
+    sharedVariables.getRestaurants.success(function (restaurants) {
+      $scope.user.restaurant = _.filter(restaurants,function (restaurant) {
+        return $scope.user.currentRestaurantId == restaurant.id;
+      })[0];
+    })
+  });
 }])
 
 .controller('detailsPlatCtrl', ['$scope', '$stateParams',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -157,10 +165,19 @@ function ($scope, $stateParams) {
   $scope.plat = $stateParams.plat;
 }])
 
-.controller('amisRestaurantCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('amisRestaurantCtrl', ['$scope', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, sharedVariables) {
+  sharedVariables.getRestaurants.success(function (restaurants) {
+    $scope.restaurant = _.filter(restaurants,function (restaurant) {
+      return $stateParams.restaurantId == restaurant.id;
+    })[0];
+    sharedVariables.getUsers.success(function (users) {
+      $scope.restaurant.fullFriends = _.filter(users,function (user) {
+        console.log($scope.restaurant)
+        return $scope.restaurant.friends.indexOf(user.id) > -1;
+      });
+    })
+  })
 }]);
