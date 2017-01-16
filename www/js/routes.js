@@ -7,10 +7,9 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
 
-      .state('menu.restaurants', {
+
+  .state('menu.restaurants', {
     url: '/restaurants',
     views: {
       'side-menu21': {
@@ -50,12 +49,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.paramTres', {
-    url: '/settings',
+  .state('menu.parametres', {
+    url: '/parametres',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/paramTres.html',
-        controller: 'paramTresCtrl'
+        templateUrl: 'templates/parametres.html',
+        controller: 'parametresCtrl'
       }
     }
   })
@@ -80,10 +79,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('maTableVide', {
+  .state('menu.maTableVide', {
     url: '/noTable',
-    templateUrl: 'templates/maTableVide.html',
-    controller: 'maTableVideCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/maTableVide.html',
+        controller: 'maTableVideCtrl'
+      }
+    }
   })
 
   .state('menu', {
@@ -112,8 +115,8 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.menus', {
-    url: '/menus',
+  .state('menu.menusRestaurant', {
+    url: '/menusRestaurant',
     views: {
       'side-menu21': {
         templateUrl: 'templates/menus.html',
@@ -123,7 +126,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.detailsUtilisateur', {
-    url: '/userDetailsPage',
+    url: '/detailsUtilisateur',
     views: {
       'side-menu21': {
         templateUrl: 'templates/detailsUtilisateur.html',
@@ -142,18 +145,18 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.amisAuGrillon', {
+  .state('menu.amisRestaurant', {
     url: '/amisRestaurant',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/amisAuGrillon.html',
-        controller: 'amisAuGrillonCtrl'
+        templateUrl: 'templates/amisRestaurant.html',
+        controller: 'amisRestaurantCtrl'
       }
     }
   })
 
 $urlRouterProvider.otherwise('/menuLateral/restaurants')
 
-  
+
 
 });
