@@ -4,7 +4,7 @@
     "name":"Le Castor et Pollux",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/leCastorEtPollux.jpg",
+    "photoUrl":"img/restaurants/castorEtPollux.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -17,7 +17,7 @@
     "name":"Le Prévert",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/lePrevert.jpg",
+    "photoUrl":"img/restaurants/prevert.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -30,7 +30,7 @@
     "name":"Le Grillon",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/leGrillon.jpg",
+    "photoUrl":"img/restaurants/grillon.jpg",
     "description":"Le Grillon Description",
     "price":5.00,
     "location":{
@@ -43,7 +43,7 @@
     "name":"L'Olivier",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/lOlivier.jpg",
+    "photoUrl":"img/restaurants/olivier.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -56,7 +56,7 @@
     "name":"Le Castor Gourmand",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/leCastorGourmand.jpg",
+    "photoUrl":"img/restaurants/castorGourmand.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -69,7 +69,7 @@
     "name":"Le Pied du Saule",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/lePiedDuSaule.jpg",
+    "photoUrl":"img/restaurants/piedDuSaule.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -82,7 +82,7 @@
     "name":"La cafétaria de l'Astrée",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/astree.jpg",
+    "photoUrl":"img/restaurants/astree.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -95,7 +95,7 @@
     "name":"La Cafétaria Grignote",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/grignote.jpg",
+    "photoUrl":"img/restaurants/grignote.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -108,7 +108,7 @@
     "name":"Le RU Jussieu",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/ruJussieu.jpg",
+    "photoUrl":"img/restaurants/ruJussieu.jpg",
     "description":"Description",
     "price":5.00,
     "location":{
@@ -121,7 +121,7 @@
     "name":"Le RU Puvis de Chavanne",
     "waitingTime":3,
     "friends":[1,2,3],
-    "photoUrl":"img/ruChavanne.jpg",
+    "photoUrl":"img/restaurants/ruChavanne.jpg",
     "description":"Description",
     "price":5.00,
     "location":{

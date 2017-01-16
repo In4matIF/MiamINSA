@@ -1,2 +1,10 @@
-[
-]
+{
+  "connected":[
+    "mauriceRichard",
+    "fabienneGentille",
+    "patrickLeBeau"
+  ],
+  "disconnected":[
+    "arthurLeGrand"
+  ]
+}
