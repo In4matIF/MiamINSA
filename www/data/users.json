@@ -1,5 +1,73 @@
 [
   {
+    "id":"mauriceRichard",
+    "name":"Maurice Richard",
+    "photoUrl":"img/users/mauriceRichard.jpg",
+    "currentRestaurantId":"grillon",
+    "nbCommunFriends":3
+  },
+  {
+    "id":"arturLeGrand",
+    "name":"Arthur LeGrand",
+    "photoUrl":"img/users/arthurLeGrand.jpg",
+    "currentRestaurantId":"",
+    "nbCommunFriends":5
+  },
+  {
+    "id":"marcelineDupont",
+    "name":"Marceline Dupont",
+    "photoUrl":"img/users/marcelineDupont.jpg",
+    "currentRestaurantId":"ruJussieu",
+    "nbCommunFriends":1
+  },
+  {
+    "id":"fabienneGentille",
+    "name":"Fabienne Gentille",
+    "photoUrl":"img/users/fabienneGentille.jpg",
+    "currentRestaurantId":"grillon",
+    "nbCommunFriends":2
+  },
+  {
+    "id":"claireMangenot",
+    "name":"Claire Mangenot",
+    "photoUrl":"img/users/claireMangenot.jpg",
+    "currentRestaurantId":"prevert",
+    "nbCommunFriends":2
+  },
+  {
+    "id":"patrickLeBeau",
+    "name":"Patrick LeBeau",
+    "photoUrl":"img/users/patrickLeBeau.jpg",
+    "currentRestaurantId":"castorEtPollux",
+    "nbCommunFriends":4
+  },
+  {
+    "id":"danielSeguin",
+    "name":"Daniel Seguin",
+    "photoUrl":"img/users/danielSeguin.jpg",
+    "currentRestaurantId":"piedDuSaule",
+    "nbCommunFriends":3
+  },
+  {
+    "id":"virginieCointreau",
+    "name":"Virginie Cointreau",
+    "photoUrl":"img/users/virginieCointreau.png",
+    "currentRestaurantId":"astree",
+    "nbCommunFriends":6
+  },
+  {
+    "id":"veroniquePasteur",
+    "name":"Véronique Pasteur",
+    "photoUrl":"img/users/veroniquePasteur.jpg",
+    "currentRestaurantId":"ruChavanne",
+    "nbCommunFriends":4
+  },
+  {
+    "id":"sophieLeDuc",
+    "name":"Sophie LeDuc",
+    "photoUrl":"img/users/sophieLeDuc.png",
+    "currentRestaurantId":"grillon",
+    "nbCommunFriends":1
+  },
 
-  }
 ]

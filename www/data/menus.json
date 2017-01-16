@@ -1,0 +1,50 @@
+{
+  "entrees": [
+    {
+      "id": "carottesRapees",
+      "name": "Carottes Rapées",
+      "photoUrl": "img/menus/carottesRapees.jpg",
+      "description": ""
+    },
+    {
+      "id":"saladeGrecque",
+      "name":"Salade Grecque",
+      "photoUrl":"img/menus/saladeGrecque.jpg",
+      "description":""
+    }
+  ],
+  "plats": [
+    {
+      "id":"chilliConCarne",
+      "name":"Chilli Con Carne",
+      "photoUrl":"img/menus/chilliConCarne.jpg",
+      "description":""
+    },
+    {
+      "id":"coteDePorc",
+      "name":"Côte de Porc",
+      "photoUrl":"img/menus/coteDePorc.jpg",
+      "description":""
+    },
+    {
+      "id":"lasagnes",
+      "name":"Lasagnes",
+      "photoUrl":"img/menus/lasagnes.jpg",
+      "description":""
+    }
+  ],
+  "desserts": [
+    {
+      "id":"clementines",
+      "name":"Clémentines",
+      "photoUrl":"img/menus/clementines.jpg",
+      "description":""
+    },
+    {
+      "id":"cremeBrulee",
+      "name":"Crême Brulée",
+      "photoUrl":"img/menus/cremeBrulee.jpg",
+      "description":""
+    }
+  ]
+}
