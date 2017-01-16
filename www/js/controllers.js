@@ -126,8 +126,10 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, sharedVariables) {
-  sharedVariables.getRestaurants.success(function (data) {
-    $scope.restaurant = data[0];
+  sharedVariables.getRestaurants.success(function (restaurants) {
+    $scope.restaurant = $scope.suggestionRestaurant = _.filter(restaurants,function (restaurant) {
+      return restaurant.id == $stateParams.restaurantId;
+    })[0];
   });
 }])
 

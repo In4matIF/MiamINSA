@@ -12,8 +12,15 @@
       </div>
       <ion-item class="item-icon-left positive" id="detailsRestaurant-list-item44" ui-sref="menu.restaurants">
         <i class="icon ion-navigate"></i>J'y vais</ion-item>
-      <ion-item class="item-icon-left balanced" id="detailsRestaurant-list-item24">
-        <i class="icon ion-android-time"></i>{{restaurant.waitingTime}} minutes</ion-item>
+      <ion-item ng-if="restaurant.waitingTime<=5" class="item-icon-left balanced" id="detailsRestaurant-list-item24">
+        <i class="icon ion-android-time"></i>{{restaurant.waitingTime}} minutes
+      </ion-item>
+      <ion-item ng-if="restaurant.waitingTime>5 && restaurant.waitingTime<=10" class="item-icon-left energized" id="detailsRestaurant-list-item24">
+        <i class="icon ion-android-time"></i>{{restaurant.waitingTime}} minutes
+      </ion-item>
+      <ion-item ng-if="restaurant.waitingTime>10" class="item-icon-left assertive" id="detailsRestaurant-list-item24">
+        <i class="icon ion-android-time"></i>{{restaurant.waitingTime}} minutes
+      </ion-item>
       <ion-item class="item-icon-left" id="detailsRestaurant-list-item34">
         <i class="icon ion-social-euro"></i>{{restaurant.price}} euros</ion-item>
       <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant">

@@ -2,21 +2,21 @@
   <ion-content padding="true" class="has-header">
     <h4 id="restaurants-heading1" style="color:#000000;">Suggestion</h4>
     <ion-list id="restaurants-list4">
-      <ion-item ng-if="suggestionRestaurant[0].waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:suggestionRestaurant[0].id})">
         <img src="{{suggestionRestaurant[0].photoUrl}}">
         <h2balanced>{{suggestionRestaurant[0].name}}
           <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
           <i class="icon ion-android-time"></i>
         </h2balanced>
       </ion-item>
-      <ion-item ng-if="suggestionRestaurant[0].waitingTime>5 && suggestionRestaurant[0].waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>5 && suggestionRestaurant[0].waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:suggestionRestaurant[0].id})">
         <img src="{{suggestionRestaurant[0].photoUrl}}">
         <h2energized>{{suggestionRestaurant[0].name}}
           <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
           <i class="icon ion-android-time"></i>
         </h2energized>
       </ion-item>
-      <ion-item ng-if="suggestionRestaurant[0].waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:suggestionRestaurant[0].id})">
         <img src="{{suggestionRestaurant[0].photoUrl}}">
         <h2assertive>{{suggestionRestaurant[0].name}}
           <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
@@ -30,21 +30,21 @@
     <h4 id="restaurants-heading2" style="color:#000000;">Restaurants Favoris</h4>
     <ion-list id="restaurants-list5">
       <div ng-repeat="rankedRestaurant in rankedRestaurants">
-        <ion-item ng-if="rankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="rankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:rankedRestaurant.id})">
           <img src="{{rankedRestaurant.photoUrl}}">
           <h2balanced>{{rankedRestaurant.name}}
             <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
             <i class="icon ion-android-time"></i>
           </h2balanced>
         </ion-item>
-        <ion-item ng-if="rankedRestaurant.waitingTime>5 && rankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="rankedRestaurant.waitingTime>5 && rankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:rankedRestaurant.id})">
           <img src="{{rankedRestaurant.photoUrl}}">
           <h2energized>{{rankedRestaurant.name}}
             <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
             <i class="icon ion-android-time"></i>
           </h2energized>
         </ion-item>
-        <ion-item ng-if="rankedRestaurant.waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="rankedRestaurant.waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:rankedRestaurant.id})">
           <img src="{{rankedRestaurant.photoUrl}}">
           <h2assertive>{{rankedRestaurant.name}}
             <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
@@ -60,21 +60,21 @@
     <h4 id="restaurants-heading3" style="color:#000000;">Autres Restaurants</h4>
     <ion-list id="restaurants-list5">
       <div ng-repeat="unrankedRestaurant in unrankedRestaurants">
-        <ion-item ng-if="unrankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="unrankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:unrankedRestaurant.id})">
           <img src="{{unrankedRestaurant.photoUrl}}">
           <h2balanced>{{unrankedRestaurant.name}}
             <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
             <i class="icon ion-android-time"></i>
           </h2balanced>
         </ion-item>
-        <ion-item ng-if="unrankedRestaurant.waitingTime>5 && unrankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5 && unrankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:unrankedRestaurant.id})">
           <img src="{{unrankedRestaurant.photoUrl}}">
           <h2energized>{{unrankedRestaurant.name}}
             <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
             <i class="icon ion-android-time"></i>
           </h2energized>
         </ion-item>
-        <ion-item ng-if="unrankedRestaurant.waitingTime>5" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:unrankedRestaurant.id})">
           <img src="{{unrankedRestaurant.photoUrl}}">
           <h2assertive>{{unrankedRestaurant.name}}
             <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>

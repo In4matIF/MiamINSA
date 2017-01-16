@@ -106,7 +106,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.detailsRestaurant', {
-    url: '/detailsRestaurant',
+    url: '/detailsRestaurant/:restaurantId',
     views: {
       'side-menu21': {
         templateUrl: 'templates/detailsRestaurant.html',
