@@ -5,21 +5,26 @@ A starting project for Ionic that optionally supports using custom SCSS.
 
 ## Using this project
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+Installation of Cordova :
+```bash
+$ npm install -g cordova
+```
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
-
+Installation of Ionic :
 ```bash
 $ npm install -g ionic
 ```
 
-Then run: 
-
+Launch the ionic server to develop :
 ```bash
-$ ionic start myProject tabs
+$ ionic serve
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
+Buil an android apk :
+```bash
+$ ionic add platform android
+$ ionic build android
+```
+An apk will be created in "platform/android/build/apk".
 
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
