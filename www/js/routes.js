@@ -137,6 +137,9 @@ angular.module('app.routes', [])
 
   .state('menu.detailsPlat', {
     url: '/detailsPlat',
+    params: {
+      plat: null
+    },
     views: {
       'side-menu21': {
         templateUrl: 'templates/detailsPlat.html',

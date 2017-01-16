@@ -1,13 +1,13 @@
 <ion-view title="Details Plat" id="page9">
   <ion-content padding="true" class="has-header">
     <div class="list card" id="detailsPlat-card23">
-      <h1 id="detailsPlat-heading10" style="color:#000000;">Salade Grecque</h1>
+      <h1 id="detailsPlat-heading10" style="color:#000000;">{{plat.name}}</h1>
       <div class=" item item-image">
-        <img src="img/D9AIW1OAR9OWco45zdOC_Saladegrecque.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{plat.photoUrl}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
       <div class="item item-body" id="detailsPlat-list-item-container6">
         <div id="detailsPlat-markdown6" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Détails du plat.</p>
+          <p style="margin-top:0px;color:#000000;">{{plat.description}}</p>
         </div>
       </div>
     </div>
