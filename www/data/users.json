@@ -7,9 +7,9 @@
     "nbCommunFriends":3
   },
   {
-    "id":"arturLeGrand",
+    "id":"arthurLeGrand",
     "name":"Arthur LeGrand",
-    "photoUrl":"img/users/arthurLeGrand.jpg",
+    "photoUrl":"img/users/arthurLeGrand.png",
     "currentRestaurantId":"",
     "nbCommunFriends":5
   },
@@ -68,6 +68,5 @@
     "photoUrl":"img/users/sophieLeDuc.png",
     "currentRestaurantId":"grillon",
     "nbCommunFriends":1
-  },
-
+  }
 ]

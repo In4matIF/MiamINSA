@@ -28,7 +28,7 @@
   {
     "id":"grillon",
     "name":"Le Grillon",
-    "waitingTime":3,
+    "waitingTime":5,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/grillon.jpg",
     "description":"Le Grillon Description",
@@ -41,7 +41,7 @@
   {
     "id":"olivier",
     "name":"L'Olivier",
-    "waitingTime":3,
+    "waitingTime":9,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/olivier.jpg",
     "description":"Description",
@@ -54,7 +54,7 @@
   {
     "id":"castorGourmand",
     "name":"Le Castor Gourmand",
-    "waitingTime":3,
+    "waitingTime":15,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/castorGourmand.jpg",
     "description":"Description",
@@ -67,7 +67,7 @@
   {
     "id":"piedDuSaule",
     "name":"Le Pied du Saule",
-    "waitingTime":3,
+    "waitingTime":20,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/piedDuSaule.jpg",
     "description":"Description",
@@ -79,8 +79,8 @@
   },
   {
     "id":"astree",
-    "name":"La cafétaria de l'Astrée",
-    "waitingTime":3,
+    "name":"La Cafétaria de l'Astrée",
+    "waitingTime":18,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/astree.jpg",
     "description":"Description",
@@ -93,7 +93,7 @@
   {
     "id":"grignote",
     "name":"La Cafétaria Grignote",
-    "waitingTime":3,
+    "waitingTime":23,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/grignote.jpg",
     "description":"Description",
@@ -106,7 +106,7 @@
   {
     "id":"ruJussieu",
     "name":"Le RU Jussieu",
-    "waitingTime":3,
+    "waitingTime":30,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/ruJussieu.jpg",
     "description":"Description",
@@ -119,7 +119,7 @@
   {
     "id":"ruChavanne",
     "name":"Le RU Puvis de Chavanne",
-    "waitingTime":3,
+    "waitingTime":30,
     "friends":[1,2,3],
     "photoUrl":"img/restaurants/ruChavanne.jpg",
     "description":"Description",

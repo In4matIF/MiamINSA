@@ -2,27 +2,18 @@
   <ion-content padding="true" class="has-header">
     <ion-list id="parametres-list13">
       <ion-item class="item-avatar" id="parametres-list-item19">
-        <img src="img/HmhpIMzeSoiKRShZuoZq_daniel.jpg">
-        <h2>Jean Marc Michel</h2>
+        <img src="{{currentUser.photoUrl}}">
+        <h2>{{currentUser.name}}</h2>
       </ion-item>
-      <ion-toggle toggle-class="toggle-positive" id="parametres-toggle2">Autoriser notifications</ion-toggle>
+      <ion-toggle toggle-class="toggle-positive" ng-model="currentUser.preferences.notifications" id="parametres-toggle2">Autoriser notifications</ion-toggle>
     </ion-list>
     <h3 id="parametres-heading12" style="color:#000000;">Restaurants favoris</h3>
     <form id="parametres-form4" class="list">
-      <ion-checkbox id="parametres-checkbox6">Le Grillon</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox7">Le Prévert</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox8">Le RU</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox9">La Grignotte</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox10">Le Castor et Pollux</ion-checkbox>
+      <ion-checkbox ng-model="restaurant.status" ng-repeat="restaurant in restaurants" id="parametres-checkbox6">{{restaurant.name}}</ion-checkbox>
     </form>
     <h3 id="parametres-heading21" style="color:#000000;">Régime alimentaire</h3>
     <form id="parametres-form9" class="list">
-      <ion-checkbox id="parametres-checkbox12">Végétarien</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox13">Végétalien</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox15">Diabétique</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox14">Sans gluten</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox16">Intolérant au lactose</ion-checkbox>
-      <ion-checkbox id="parametres-checkbox17">Allergies alimentaires</ion-checkbox>
+      <ion-checkbox ng-model="diet.status" ng-repeat="diet in diets" id="parametres-checkbox12">{{diet.name}}</ion-checkbox>
     </form>
   </ion-content>
 </ion-view>

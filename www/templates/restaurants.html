@@ -2,64 +2,89 @@
   <ion-content padding="true" class="has-header">
     <h4 id="restaurants-heading1" style="color:#000000;">Suggestion</h4>
     <ion-list id="restaurants-list4">
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item13" ui-sref="menu.detailsRestaurant">
-        <img src="img/SyeytGE1SPGWxbI7FlNH_Prvert.jpg">
-        <h2balanced>Le Prévert
-          <p>2 minutes d'attente</p>
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2balanced>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
           <i class="icon ion-android-time"></i>
         </h2balanced>
+      </ion-item>
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>5 && suggestionRestaurant[0].waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2energized>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2energized>
+      </ion-item>
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2assertive>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2assertive>
       </ion-item>
       <ion-item class="item-icon-left" id="restaurants-list-item49">
-        <i class="icon ion-person-stalker"></i>3 amis</ion-item>
+        <i class="icon ion-person-stalker"></i>{{suggestionRestaurant[0].friends.length}} amis</ion-item>
     </ion-list>
     <div class="spacer" style="width: 300px; height: 28px;"></div>
-    <h4 id="restaurants-heading2" style="color:#000000;">Restaurants</h4>
+    <h4 id="restaurants-heading2" style="color:#000000;">Restaurants Favoris</h4>
     <ion-list id="restaurants-list5">
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
-        <img src="img/6MVSuOwWSdirpgcY8oJc_Grillon.jpg">
-        <h2balanced>Le Grillon
-          <p>3 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item50">
-        <i class="icon ion-person-stalker"></i>5 amis</ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item17" ui-sref="menu.detailsRestaurant">
-        <img src="img/kMfPXSMZQiumicwL4oVw_RestaurantINSA.jpg">
-        <h2balanced>Le Castor et Pollux
-          <p>5 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item51">
-        <i class="icon ion-person-stalker"></i>4 amis</ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item18" ui-sref="menu.detailsRestaurant">
-        <img src="img/rvhZZtWFRICseDWhfIep_RestoUJussieu.jpg">
-        <h2assertive>Le RU
-          <p>12 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item52">
-        <i class="icon ion-person-stalker"></i>1 amis</ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item15" ui-sref="menu.detailsRestaurant">
-        <img src="img/K9Q2dRfTTao1ODZsN0Qo_Grignote.jpg">
-        <h2assertive>La Grignotte
-          <p>15 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item53">
-        <i class="icon ion-person-stalker"></i>1 amis</ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item16" ui-sref="menu.detailsRestaurant">
-        <img src="img/YjmLa5ZWSQCMyvli7npG_Olivier.jpg">
-        <h2assertive>L'Olivier
-          <p>20 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item54">
-        <i class="icon ion-person-stalker"></i>1 amis</ion-item>
+      <div ng-repeat="rankedRestaurant in rankedRestaurants">
+        <ion-item ng-if="rankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2balanced>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2balanced>
+        </ion-item>
+        <ion-item ng-if="rankedRestaurant.waitingTime>5 && rankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2energized>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2energized>
+        </ion-item>
+        <ion-item ng-if="rankedRestaurant.waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2assertive>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2assertive>
+        </ion-item>
+        <ion-item class="item-icon-left" id="restaurants-list-item50">
+          <i class="icon ion-person-stalker"></i>{{rankedRestaurant.friends.length}} amis
+        </ion-item>
+      </div>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 28px;"></div>
+    <h4 id="restaurants-heading3" style="color:#000000;">Autres Restaurants</h4>
+    <ion-list id="restaurants-list5">
+      <div ng-repeat="unrankedRestaurant in unrankedRestaurants">
+        <ion-item ng-if="unrankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2balanced>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2balanced>
+        </ion-item>
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5 && unrankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2energized>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2energized>
+        </ion-item>
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ui-sref="menu.detailsRestaurant">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2assertive>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2assertive>
+        </ion-item>
+        <ion-item class="item-icon-left" id="restaurants-list-item50">
+          <i class="icon ion-person-stalker"></i>{{unrankedRestaurant.friends.length}} amis
+        </ion-item>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
