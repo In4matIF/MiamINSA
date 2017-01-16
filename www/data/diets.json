@@ -1,0 +1,21 @@
+[
+  {
+    "id":"vegetarien",
+    "name":"Végétarien"
+  },{
+    "id":"vegetalien",
+    "name":"Végétalien"
+  },{
+    "id":"diabetique",
+    "name":"Diabétique"
+  },{
+    "id":"sansGluten",
+    "name":"Sans Gluten"
+  },{
+    "id":"intolerantLactose",
+    "name":"Intolérant au lactose"
+  },{
+    "id":"allergiesAlimentaires",
+    "name":"Allergies Alimentaires"
+  }
+]

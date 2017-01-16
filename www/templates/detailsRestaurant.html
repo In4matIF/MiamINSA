@@ -1,23 +1,23 @@
 <ion-view title="Details Restaurant" id="page6">
   <ion-content padding="true" class="has-header">
     <div class="list card" id="detailsRestaurant-card21">
-      <h1 id="detailsRestaurant-heading3" style="color:#000000;">Le Grillon</h1>
+      <h1 id="detailsRestaurant-heading3" style="color:#000000;">{{restaurant.name}}</h1>
       <div class=" item item-image">
-        <img src="img/Xg14IYLqQ8mNVhKRhq1Z_Grillon.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{restaurant.photoUrl}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
       <div class="item item-body" id="detailsRestaurant-list-item-container2">
         <div id="detailsRestaurant-markdown2" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Description du restaurant.</p>
+          <p style="margin-top:0px;color:#000000;">{{restaurant.description}}</p>
         </div>
       </div>
       <ion-item class="item-icon-left positive" id="detailsRestaurant-list-item44" ui-sref="menu.restaurants">
         <i class="icon ion-navigate"></i>J'y vais</ion-item>
       <ion-item class="item-icon-left balanced" id="detailsRestaurant-list-item24">
-        <i class="icon ion-android-time"></i>3 minutes</ion-item>
+        <i class="icon ion-android-time"></i>{{restaurant.waitingTime}} minutes</ion-item>
       <ion-item class="item-icon-left" id="detailsRestaurant-list-item34">
-        <i class="icon ion-social-euro"></i>5,00</ion-item>
+        <i class="icon ion-social-euro"></i>{{restaurant.price}} euros</ion-item>
       <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant">
-        <i class="icon ion-person-stalker"></i>10 amis</ion-item>
+        <i class="icon ion-person-stalker"></i>{{restaurant.friends.length}} amis</ion-item>
       <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item26" ui-sref="menu.menusRestaurant">
         <i class="icon ion-android-map"></i>Menus</ion-item>
       <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item60" ui-sref="menu.menusRestaurant">

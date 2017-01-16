@@ -1,0 +1,132 @@
+[
+  {
+    "id":"castorEtPollux",
+    "name":"Le Castor et Pollux",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/leCastorEtPollux.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78109003726761,
+      "long":4.873552322387695
+    }
+  },
+  {
+    "id":"prevert",
+    "name":"Le Prévert",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/lePrevert.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.781168601448755,
+      "long":4.873412847518921
+    }
+  },
+  {
+    "id":"grillon",
+    "name":"Le Grillon",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/leGrillon.jpg",
+    "description":"Le Grillon Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78393324189943,
+      "long":4.8750463128089905
+    }
+  },
+  {
+    "id":"olivier",
+    "name":"L'Olivier",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/lOlivier.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78424374099144,
+      "long":4.87480491399765
+    }
+  },
+  {
+    "id":"castorGourmand",
+    "name":"Le Castor Gourmand",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/leCastorGourmand.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78397252200061,
+      "long":4.874841354321688
+    }
+  },
+  {
+    "id":"piedDuSaule",
+    "name":"Le Pied du Saule",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/lePiedDuSaule.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78083189703586,
+      "long":4.873310923576355
+    }
+  },
+  {
+    "id":"astree",
+    "name":"La cafétaria de l'Astrée",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/astree.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78348151874679,
+      "long":4.870697110891342
+    }
+  },
+  {
+    "id":"grignote",
+    "name":"La Cafétaria Grignote",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/grignote.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78062052044883,
+      "long":4.875885844230652
+    }
+  },
+  {
+    "id":"ruJussieu",
+    "name":"Le RU Jussieu",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/ruJussieu.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.78085621464492,
+      "long":4.876202344894409
+    }
+  },
+  {
+    "id":"ruChavanne",
+    "name":"Le RU Puvis de Chavanne",
+    "waitingTime":3,
+    "friends":[1,2,3],
+    "photoUrl":"img/ruChavanne.jpg",
+    "description":"Description",
+    "price":5.00,
+    "location":{
+      "lat":45.77878169739365,
+      "long":4.871969819068909
+    }
+  }
+]

@@ -80,12 +80,13 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('detailsRestaurantCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('detailsRestaurantCtrl', ['$scope', '$stateParams', 'sharedVariables', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, sharedVariables) {
+  sharedVariables.getRestaurants.success(function (data) {
+    $scope.restaurant = data[0];
+  });
 }])
 
 .controller('menusCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
