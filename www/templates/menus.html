@@ -4,7 +4,7 @@
     <ion-list id="menus-list8">
       <ion-item ng-repeat="entree in menus.entrees" class="item-thumbnail-left" id="menus-list-item27" ui-sref="menu.detailsPlat({plat:entree})">
         <img src="{{entree.photoUrl}}">
-        <h2>{{entree.name}}</h2>
+        <h2dark>{{entree.name}}</h2dark>
       </ion-item>
     </ion-list>
     <div class="spacer" style="width: 300px; height: 32px;"></div>
@@ -12,7 +12,7 @@
     <ion-list id="menus-list9">
       <ion-item ng-repeat="plat in menus.plats" class="item-thumbnail-left" id="menus-list-item29" ui-sref="menu.detailsPlat({plat:plat})">
         <img src="{{plat.photoUrl}}">
-        <h2>{{plat.name}}</h2>
+        <h2dark>{{plat.name}}</h2dark>
       </ion-item>
     </ion-list>
     <div class="spacer" style="width: 300px; height: 32px;"></div>
@@ -20,7 +20,7 @@
     <ion-list id="menus-list10">
       <ion-item ng-repeat="dessert in menus.desserts" class="item-thumbnail-left" id="menus-list-item32" ui-sref="menu.detailsPlat({plat:dessert})">
         <img src="{{dessert.photoUrl}}">
-        <h2>{{dessert.name}}</h2>
+        <h2dark>{{dessert.name}}</h2dark>
       </ion-item>
     </ion-list>
   </ion-content>

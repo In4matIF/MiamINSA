@@ -7,7 +7,7 @@
         <ion-item class="item-thumbnail-left item-icon-right" id="maTable-list-item74"
                   ui-sref="menu.detailsRestaurant({restaurantId:sharedVariables.session.table.restaurant.id})">
           <img src="{{sharedVariables.session.table.restaurant.photoUrl}}">
-          <h2>{{sharedVariables.session.table.restaurant.name}}</h2>
+          <h2dark>{{sharedVariables.session.table.restaurant.name}}</h2dark>
           <p>rdv : {{sharedVariables.session.table.time}}</p>
         </ion-item>
       </ion-list>
@@ -15,7 +15,7 @@
       <ion-list id="maTable-list24">
         <ion-item ng-repeat="person in sharedVariables.session.table.persons" class="item-avatar" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur({userId:person.id})">
           <img src="{{person.photoUrl}}">
-          <h2>{{person.name}}</h2>
+          <h2dark>{{person.name}}</h2dark>
         </ion-item>
       </ion-list>
       <div class="spacer" style="width: 283px; height: 25px;"></div>
@@ -23,7 +23,7 @@
       <ion-list id="maTable-list24">
         <ion-item ng-repeat="pendingPerson in sharedVariables.session.table.pendingPersons" class="item-avatar item-icon-right" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur({userId:pendingPerson.id})">
           <img src="{{pendingPerson.photoUrl}}">
-          <h2>{{pendingPerson.name}}</h2>
+          <h2dark>{{pendingPerson.name}}</h2dark>
           <i ng-if="currentUser.id==sharedVariables.session.table.userId" class="icon assertive ion-close" ng-click="deletePendingPerson($event,pendingPerson)"></i>
         </ion-item>
       </ion-list>
