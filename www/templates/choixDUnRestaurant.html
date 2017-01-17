@@ -4,61 +4,108 @@
     <form id="choixDUnRestaurant-form6" class="list">
       <label class="item item-input" id="choixDUnRestaurant-input3">
         <span class="input-label">Rendez-Vous</span>
-        <input type="time" placeholder="12 : 30">
+        <input type="text" ng-click="openTimePicker()" ng-model="selectedTime">
       </label>
     </form>
-    <h4 id="choixDUnRestaurant-heading16" style="color:#000000;">Suggestion</h4>
-    <ion-list id="choixDUnRestaurant-list25">
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="choixDUnRestaurant-list-item40" ui-sref="menu.detailsRestaurant">
-        <img src="img/GIFZj6cSDi3TJ54nzzA3_Grillon.jpg">
-        <h2balanced>Le Grillon
-          <p>3 minutes d'attente</p>
+    <h4 id="restaurants-heading1" style="color:#000000;">Suggestion</h4>
+    <ion-list id="restaurants-list4">
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ng-click="selectRestaurant(suggestionRestaurant[0].id)">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2balanced>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
           <i class="icon ion-android-time"></i>
         </h2balanced>
       </ion-item>
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>5 && suggestionRestaurant[0].waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ng-click="selectRestaurant(suggestionRestaurant[0].id)">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2energized>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2energized>
+      </ion-item>
+      <ion-item ng-if="suggestionRestaurant[0].waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ng-click="selectRestaurant(suggestionRestaurant[0].id)">
+        <img src="{{suggestionRestaurant[0].photoUrl}}">
+        <h2assertive>{{suggestionRestaurant[0].name}}
+          <p>{{suggestionRestaurant[0].waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2assertive>
+      </ion-item>
+      <ion-item class="item-icon-left" id="restaurants-list-item49">
+        <i class="icon ion-person-stalker"></i>{{suggestionRestaurant[0].friends.length}} amis
+      </ion-item>
+      <div ng-show="restaurantSelectedId==suggestionRestaurant[0].id" id="maTableVide-button-bar2" class="button-bar">
+        <a ui-sref="menu.detailsRestaurant({restaurantId:suggestionRestaurant[0].id})" id="maTableVide-button10" class="button button-dark  button-block button-outline">Détails</a>
+        <a ng-click="choisirRestaurant(suggestionRestaurant[0])" id="maTableVide-button13" class="button button-positive button-block">Choisir</a>
+      </div>
     </ion-list>
-    <div id="choixDUnRestaurant-button-bar4" class="button-bar">
-      <a ui-sref="menu.detailsRestaurant" id="choixDUnRestaurant-button16" class="button button-dark  button-block button-outline">Détails</a>
-      <a ui-sref="menu.maTable" id="choixDUnRestaurant-button17" class="button button-positive  button-block">Choisir</a>
-    </div>
     <div class="spacer" style="width: 300px; height: 28px;"></div>
-    <h4 id="choixDUnRestaurant-heading17" style="color:#000000;">Restaurants</h4>
-    <ion-list id="choixDUnRestaurant-list17">
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="choixDUnRestaurant-list-item31" ui-sref="menu.detailsRestaurant">
-        <img src="img/fkKm5ENQfuB1GEIBcCbg_Prvert.jpg">
-        <h2balanced>Le Prévert
-          <p>2 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right balanced" id="choixDUnRestaurant-list-item56" ui-sref="menu.detailsRestaurant">
-        <img src="img/NvH90lLETLGpMlNKhaL7_RestaurantINSA.jpg">
-        <h2balanced>Le Castor et Pollux
-          <p>5 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="choixDUnRestaurant-list-item58" ui-sref="menu.detailsRestaurant">
-        <img src="img/LWgbS63FQgizB62JmvwI_RestoUJussieu.jpg">
-        <h2assertive>Le RU
-          <p>12 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="choixDUnRestaurant-list-item64" ui-sref="menu.detailsRestaurant">
-        <img src="img/1kejlAouRV6fGnvatQ0Q_Grignote.jpg">
-        <h2assertive>La Grignotte
-          <p>15 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right assertive" id="choixDUnRestaurant-list-item66" ui-sref="menu.detailsRestaurant">
-        <img src="img/hsVuEUmESOyRsc9HVSkz_Olivier.jpg">
-        <h2assertive>L'Olivier
-          <p>20 minutes d'attente</p>
-          <i class="icon ion-android-time"></i>
-        </h2assertive>
-      </ion-item>
+    <h4 id="restaurants-heading2" style="color:#000000;">Restaurants Favoris</h4>
+    <ion-list id="restaurants-list5">
+      <div ng-repeat="rankedRestaurant in rankedRestaurants">
+        <ion-item ng-if="rankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ng-click="selectRestaurant(rankedRestaurant.id)">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2balanced>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2balanced>
+        </ion-item>
+        <ion-item ng-if="rankedRestaurant.waitingTime>5 && rankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ng-click="selectRestaurant(rankedRestaurant.id)">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2energized>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2energized>
+        </ion-item>
+        <ion-item ng-if="rankedRestaurant.waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ng-click="selectRestaurant(rankedRestaurant.id)">
+          <img src="{{rankedRestaurant.photoUrl}}">
+          <h2assertive>{{rankedRestaurant.name}}
+            <p>{{rankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2assertive>
+        </ion-item>
+        <ion-item class="item-icon-left" id="restaurants-list-item50">
+          <i class="icon ion-person-stalker"></i>{{rankedRestaurant.friends.length}} amis
+        </ion-item>
+        <div ng-show="restaurantSelectedId==rankedRestaurant.id" id="maTableVide-button-bar4" class="button-bar">
+          <a ui-sref="menu.detailsRestaurant({restaurantId:rankedRestaurant.id})" id="maTableVide-button18" class="button button-dark  button-block button-outline">Détails</a>
+          <a ng-click="choisirRestaurant(rankedRestaurant)" id="maTableVide-button15" class="button button-positive button-block">Choisir</a>
+        </div>
+        <div class="spacer" style="width: 300px; height: 28px;"></div>
+      </div>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 28px;"></div>
+    <h4 id="restaurants-heading3" style="color:#000000;">Autres Restaurants</h4>
+    <ion-list id="restaurants-list5">
+      <div ng-repeat="unrankedRestaurant in unrankedRestaurants">
+        <ion-item ng-if="unrankedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="restaurants-list-item14" ng-click="selectRestaurant(unrankedRestaurant.id)">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2balanced>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2balanced>
+        </ion-item>
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5 && unrankedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="restaurants-list-item14" ng-click="selectRestaurant(unrankedRestaurant.id)">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2energized>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2energized>
+        </ion-item>
+        <ion-item ng-if="unrankedRestaurant.waitingTime>5" class="item-thumbnail-left item-icon-right assertive" id="restaurants-list-item14" ng-click="selectRestaurant(unrankedRestaurant.id)">
+          <img src="{{unrankedRestaurant.photoUrl}}">
+          <h2assertive>{{unrankedRestaurant.name}}
+            <p>{{unrankedRestaurant.waitingTime}} minutes d'attente</p>
+            <i class="icon ion-android-time"></i>
+          </h2assertive>
+        </ion-item>
+        <ion-item class="item-icon-left" id="restaurants-list-item50">
+          <i class="icon ion-person-stalker"></i>{{unrankedRestaurant.friends.length}} amis
+        </ion-item>
+        <div ng-show="restaurantSelectedId==unrankedRestaurant.id" id="maTableVide-button-bar7" class="button-bar">
+          <a ui-sref="menu.detailsRestaurant({restaurantId:unrankedRestaurant.id})" id="maTableVide-button26" class="button button-dark  button-block button-outline">Détails</a>
+          <a ng-click="choisirRestaurant(unrankedRestaurant)" id="maTableVide-button29" class="button button-positive button-block">Choisir</a>
+        </div>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>

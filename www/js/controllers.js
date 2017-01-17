@@ -16,15 +16,75 @@ function ($scope, $stateParams, sharedVariables) {
         return rankedRestaurants.unranked.indexOf(restaurant.id) > -1;
       });
     });
-  })
+  });
 
 }])
 
-.controller('choixDUnRestaurantCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('choixDUnRestaurantCtrl', ['$scope', '$stateParams', 'sharedVariables', 'ionicTimePicker', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams, sharedVariables, ionicTimePicker, $state) {
+  sharedVariables.getRankedRestaurants.success(function (rankedRestaurants) {
+    sharedVariables.getRestaurants.success(function (restaurants) {
+      $scope.suggestionRestaurant = _.filter(restaurants,function (restaurant) {
+        return rankedRestaurants.suggestion == restaurant.id;
+      });
+      $scope.rankedRestaurants = _.filter(restaurants,function (restaurant) {
+        return rankedRestaurants.ranked.indexOf(restaurant.id) > -1;
+      });
+      $scope.unrankedRestaurants = _.filter(restaurants,function (restaurant) {
+        return rankedRestaurants.unranked.indexOf(restaurant.id) > -1;
+      });
+    });
+  });
 
+  $scope.selectedTime = "";
+
+  $scope.openTimePicker = function () {
+    var ipObj1 = {
+      callback: function (val) {
+        if (typeof (val) === 'undefined') {
+          console.log('Time not selected');
+        } else {
+          var selectedTime = new Date(val * 1000);
+          $scope.selectedTime = selectedTime.getUTCHours() + ' : ' + ((selectedTime.getUTCMinutes()<10)? '0'+selectedTime.getUTCMinutes() : selectedTime.getUTCMinutes());
+          console.log('Selected epoch is : ', val, 'and the time is ', selectedTime.getUTCHours(), 'H :', selectedTime.getUTCMinutes(), 'M');
+        }
+      },
+      inputTime: 50400
+    };
+    ionicTimePicker.openTimePicker(ipObj1);
+  };
+
+  $scope.choisirRestaurant = function (restaurant) {
+    if($scope.selectedTime!=""){
+      sharedVariables.getCurrentUser.success(function (currentUser) {
+        sharedVariables.session.table = {
+          id:0,
+          userId:currentUser.id,
+          user:currentUser,
+          restaurantId:restaurant.id,
+          restaurant:restaurant,
+          time:$scope.selectedTime,
+          people:[],
+          pendingPeople:[],
+          nbMissingMessages:0
+        }
+        $state.go('menu.maTable');
+      });
+    }else{
+      alert("Veuillez choisir une heure.");
+    }
+  };
+
+  $scope.restaurantSelectedId = null;
+  $scope.selectRestaurant = function (restaurantId) {
+    if($scope.restaurantSelectedId == restaurantId){
+      $scope.restaurantSelectedId = "";
+    }else{
+      $scope.restaurantSelectedId = restaurantId;
+    }
+  };
 
 }])
 
