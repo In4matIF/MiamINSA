@@ -1,1 +1,33 @@
 /* Empty. Add your own CSS if you like */
+.bar-stable.bar.bar-header {
+  background-color: #e42618;
+}
+
+.title.title-center.header-item {
+  color : white;
+}
+
+.bar.bar-stable .title {
+  color : white;
+}
+
+.button.button-icon.button-clear.ion-navicon {
+  color : white;
+}
+
+.bar-stable .button.button-clear{
+  color : white;
+}
+
+.item-complex .item-content{
+  background-color: #f2f2f2;
+  outline:1px solid #dadada;
+}
+
+.item{
+  background-color: #f2f2f2;
+  outline:1px solid #dadada;
+}
+
+
+
