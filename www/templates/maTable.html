@@ -21,9 +21,10 @@
       <div class="spacer" style="width: 283px; height: 25px;"></div>
       <h4 id="maTable-heading21" style="color:#000000;">{{sharedVariables.session.table.pendingPeople.length}} personnes en attente</h4>
       <ion-list id="maTable-list24">
-        <ion-item ng-repeat="pendingPerson in sharedVariables.session.table.pendingPersons" class="item-avatar" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur({userId:pendingPerson.id})">
+        <ion-item ng-repeat="pendingPerson in sharedVariables.session.table.pendingPersons" class="item-avatar item-icon-right" id="maTable-list-item75">
           <img src="{{pendingPerson.photoUrl}}">
           <h2>{{pendingPerson.name}}</h2>
+          <i class="icon assertive ion-close" ng-click="deletePendingPerson($event,pendingPerson)"></i>
         </ion-item>
       </ion-list>
       <button id="maTable-button10" class="button button-balanced  button-block" ui-sref="menu.addFriendTable">Ajouter un Ami</button>

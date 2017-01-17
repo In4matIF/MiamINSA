@@ -4,33 +4,26 @@
     <form id="creerUneTable-form3" class="list">
       <label class="item item-input" id="creerUneTable-search1">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="">
+        <input type="search" placeholder="" ng-model="searchText">
       </label>
-      <ion-item class="item-avatar balanced" id="creerUneTable-list-item30" ui-sref="menu.detailsUtilisateur">
-        <img src="img/ALczP3WxReShCyv4uXt9_elliot.jpg">
-        <h2balanced>Patrick LeBeau
-          <p>Disponible</p>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-avatar balanced" id="creerUneTable-list-item22">
-        <img src="img/ztUeI89R9ynqAi6pvMVQ_matthew.png">
-        <h2balanced>Maurice Richard
-          <p>Disponible</p>
-        </h2balanced>
-      </ion-item>
-      <ion-item class="item-avatar dark" id="creerUneTable-list-item23" ui-sref="menu.detailsUtilisateur">
-        <img src="img/DFZphFTIQyWQlKpWcQrU_molly.png">
-        <h2dark>Fabienne Gentille
-          <p>Le Prévert ~10 min</p>
-        </h2dark>
-      </ion-item>
-      <ion-item class="item-avatar assertive" id="creerUneTable-list-item21" ui-sref="menu.detailsUtilisateur">
-        <img src="img/tulk391RHSC2G3CcJULx_steve.jpg">
-        <h2assertive>Arthur LeGrand
-          <p>Déconnecté</p>
-        </h2assertive>
-      </ion-item>
-      <a ui-sref="menu.choixDUnRestaurant" id="creerUneTable-button4" class="button button-positive  button-block">Inviter 2 personnes</a>
+      <h4 id="amis-heading7" style="color:#000000;">Amis connectés</h4>
+      <ion-list id="amis-list11">
+        <ion-item ng-repeat="connectedFriend in connectedFriends | filter:{name:searchText}" class="item-avatar item-icon-right" id="amis-list-item35" ui-sref="menu.detailsUtilisateur({userId:connectedFriend.id})">
+          <img src="{{connectedFriend.photoUrl}}">
+          <h2>{{connectedFriend.name}}</h2>
+          <p>{{connectedFriend.restaurant.name}}</p>
+          <i class="icon balanced ion-plus" ng-click="addFriend($event,connectedFriend)"></i>
+        </ion-item>
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 23px;"></div>
+      <h4 id="amis-heading8" style="color:#000000;">Amis déconnectés</h4>
+      <ion-list id="amis-list12">
+        <ion-item ng-repeat="disconnectedFriend in disconnectedFriends | filter:{name:searchText}" class="item-avatar item-icon-right" id="amis-list-item37">
+          <img src="{{disconnectedFriend.photoUrl}}">
+          <h2>{{disconnectedFriend.name}}</h2>
+          <i class="icon balanced ion-plus" ng-click="addFriend(connectedFriend)"></i>
+        </ion-item>
+      </ion-list>
     </form>
   </ion-content>
 </ion-view>

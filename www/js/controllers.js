@@ -96,12 +96,41 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('addFriendTableCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('addFriendTableCtrl', ['$scope', '$state', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $state, $stateParams, sharedVariables) {
+  sharedVariables.getCurrentUserFriends.success(function (data) {
+    sharedVariables.getUsers.success(function (users) {
+      $scope.connectedFriends = _.filter(users,function (user) {
+        return data.connected.indexOf(user.id) > -1
+          && sharedVariables.session.table.pendingPeople.indexOf(user.id) == -1
+          && sharedVariables.session.table.people.indexOf(user.id) == -1;
+      });
+      sharedVariables.getRestaurants.success(function (restaurants) {
+        _.forEach($scope.connectedFriends, function (friend) {
+          friend.restaurant = _.find(restaurants,function (restaurant) {
+            return restaurant.id == friend.currentRestaurantId;
+          });
+        });
+      });
+      $scope.disconnectedFriends = _.filter(users,function (user) {
+        return data.disconnected.indexOf(user.id) > -1
+          && sharedVariables.session.table.pendingPeople.indexOf(user.id) == -1
+          && sharedVariables.session.table.people.indexOf(user.id) == -1;
+      });
+    })
+  });
+  $scope.addFriend = function ($event,friend) {
+    $event.stopPropagation();
+    sharedVariables.session.table.pendingPeople.push(friend.id);
+    sharedVariables.getUsers.success(function (users) {
+      sharedVariables.session.table.pendingPersons = _.filter(users,function (user) {
+        return sharedVariables.session.table.pendingPeople.indexOf(user.id) > -1;
+      });
+    });
+    $state.go('menu.maTable');
+  }
 }])
 
 .controller('parametresCtrl', ['$scope', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -190,6 +219,17 @@ function ($scope, $stateParams, $state, sharedVariables) {
 
   $scope.quitterTable = function () {
     sharedVariables.session.table = null;
+    $state.go('menu.maTable');
+  };
+
+  $scope.deletePendingPerson = function ($event,person) {
+    $event.stopPropagation();
+    _.pull(sharedVariables.session.table.pendingPeople, person.id);
+    sharedVariables.getUsers.success(function (users) {
+      sharedVariables.session.table.pendingPersons = _.filter(users,function (user) {
+        return sharedVariables.session.table.pendingPeople.indexOf(user.id) > -1;
+      });
+    });
     $state.go('menu.maTable');
   };
 
