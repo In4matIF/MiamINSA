@@ -271,22 +271,38 @@ function ($scope, $stateParams, $state, sharedVariables) {
   }
 }])
 
-.controller('menuCtrl', ['$scope', '$stateParams', 'sharedVariables', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('menuCtrl', ['$scope', '$stateParams', 'sharedVariables', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, sharedVariables) {
+function ($scope, $stateParams, sharedVariables, $state) {
+  $scope.sharedVariables = sharedVariables;
   sharedVariables.getCurrentUser.success(function (currentUser) {
     $scope.currentUser = currentUser;
-  })
-
+  });
+  $scope.logout = function () {
+    sharedVariables.session.isINSA = false;
+    sharedVariables.session.isFacebook = false;
+    sharedVariables.session.isGoogle = false;
+    $state.go('login');
+  }
 }])
 
-.controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('loginCtrl', ['$scope', '$stateParams', 'sharedVariables', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, sharedVariables, $state) {
+  $scope.connectINSA = function () {
+    sharedVariables.session.isINSA = true;
+    $state.go('menu.restaurants');
+  };
+  $scope.connectFacebook = function () {
+    sharedVariables.session.isFacebook = true;
+    $state.go('menu.restaurants');
+  };
+  $scope.connectGoogle = function () {
+    sharedVariables.session.isGoogle = true;
+    $state.go('menu.restaurants');
+  };
 }])
 
 .controller('detailsRestaurantCtrl', ['$scope', '$stateParams', 'sharedVariables', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller

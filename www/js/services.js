@@ -13,7 +13,10 @@ angular.module('app.services', [])
       getTablesInvitations:$http.get('data/tablesInvitations.json'),
 
       session:{
-        table:null
+        table:null,
+        isINSA:false,
+        isFacebook:false,
+        isGoogle:false
       }
     };
 

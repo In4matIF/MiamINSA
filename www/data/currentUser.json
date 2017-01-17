@@ -2,6 +2,7 @@
   "id":"michelleLeBlanc",
   "name":"Michelle LeBlanc",
   "photoUrl":"img/users/michelleLeBlanc.jpg",
+  "soldeINSA":"12,00",
   "preferences":{
     "notifications":true,
     "favoris":["prevert","grillon","ruJussieu","olivier","castorGourmand","castorEtPollux","astree","grignote","ruChavanne"],
