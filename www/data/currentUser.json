@@ -1,7 +1,7 @@
 {
-  "id":"jeanMarcMichel",
-  "name":"Jean Marc Michel",
-  "photoUrl":"img/users/jeanMarcMichel.jpg",
+  "id":"michelleLeBlanc",
+  "name":"Michelle LeBlanc",
+  "photoUrl":"img/users/michelleLeBlanc.jpg",
   "preferences":{
     "notifications":true,
     "favoris":["prevert","grillon","ruJussieu","olivier","castorGourmand","castorEtPollux","astree","grignote","ruChavanne"],
