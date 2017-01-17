@@ -36,7 +36,7 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('creerUneTableCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('addFriendTableCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
@@ -88,20 +88,71 @@ function ($scope, $stateParams, sharedVariables) {
   })
 }])
 
-.controller('maTableCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('maTableCtrl', ['$scope', '$stateParams', '$state', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams, $state, sharedVariables) {
+  $scope.sharedVariables = sharedVariables;
 
+  $scope.$watch(
+    $scope.sharedVariables.session.table,
+    function (newValue, oldValue, scope) {
+      if(newValue){
+        $scope.sharedVariables.session.table = fillTableWithInformation(newValue);
+      }
+    }
+  );
 
-}])
+  sharedVariables.getTablesInvitations.success(function (tablesInvitations) {
+    $scope.tablesInvitations = tablesInvitations;
+    _.forEach($scope.tablesInvitations,function (tablesInvitation) {
+      tablesInvitation = fillTableWithInformation(tablesInvitation);
+    })
+  });
 
-.controller('maTableVideCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+  $scope.invitationSelectedId = null;
+  $scope.selectInvitation = function (invitationId) {
+    if($scope.invitationSelectedId == invitationId){
+      $scope.invitationSelectedId = "";
+    }else{
+      $scope.invitationSelectedId = invitationId;
+    }
+  };
 
+  $scope.goChat = function () {
 
+  };
+
+  $scope.choisirTable = function (table) {
+    sharedVariables.session.table = table;
+    $state.go('menu.maTable');
+  };
+
+  $scope.quitterTable = function () {
+    sharedVariables.session.table = null;
+    $state.go('menu.maTable');
+  };
+
+  function fillTableWithInformation(table){
+    var newTable = table;
+    sharedVariables.getRestaurants.success(function (restaurants) {
+      newTable.restaurant = _.filter(restaurants,function (restaurant) {
+        return newTable.restaurantId == restaurant.id;
+      })[0];
+      sharedVariables.getUsers.success(function (users) {
+        newTable.user = _.filter(users,function (user) {
+          return newTable.userId == user.id;
+        })[0];
+        newTable.persons = _.filter(users,function (user) {
+          return newTable.people.indexOf(user.id) > -1;
+        });
+        newTable.pendingPersons = _.filter(users,function (user) {
+          return newTable.pendingPeople.indexOf(user.id) > -1;
+        });
+        return newTable;
+      });
+    });
+  }
 }])
 
 .controller('menuCtrl', ['$scope', '$stateParams', 'sharedVariables', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller

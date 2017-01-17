@@ -1,24 +1,64 @@
 <ion-view title="Ma Table" id="page14">
+
   <ion-content padding="true" class="has-header">
-    <ion-list id="maTable-list23">
-      <ion-item class="item-thumbnail-left item-icon-right" id="maTable-list-item74" ui-sref="menu.detailsRestaurant">
-        <img src="img/9WsjpBXSEqBTbStH7Orz_Grillon.jpg">
-        <h2>Le Grillon</h2>
-        <p>rdv : 12 : 30</p>
-        <i class="icon ion-edit"></i>
-      </ion-item>
-    </ion-list>
-    <h4 id="maTable-heading20" style="color:#000000;">3 personnes</h4>
-    <ion-list id="maTable-list24">
-      <ion-item class="item-avatar" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur">
-        <img src="img/m3ZNmcAeSeSF7T3JsdcU_matthew.png">
-        <h2>Maurice Richard</h2>
-      </ion-item>
-      <ion-item class="item-avatar" id="maTable-list-item76" ui-sref="menu.detailsUtilisateur">
-        <img src="img/bpdJVT8jQGtoBUx7fvZC_elliot.jpg">
-        <h2>Patrick LeBeau</h2>
-      </ion-item>
-    </ion-list>
-    <button id="maTable-button11" class="button button-positive  button-block">Discussion (2)</button>
+
+    <div ng-if="sharedVariables.session.table!=null">
+      <ion-list id="maTable-list23">
+        <ion-item class="item-thumbnail-left item-icon-right" id="maTable-list-item74"
+                  ui-sref="menu.detailsRestaurant({restaurantId:sharedVariables.session.table.restaurant.id})">
+          <img src="{{sharedVariables.session.table.restaurant.photoUrl}}">
+          <h2>{{sharedVariables.session.table.restaurant.name}}</h2>
+          <p>rdv : {{sharedVariables.session.table.time}}</p>
+        </ion-item>
+      </ion-list>
+      <h4 id="maTable-heading20" style="color:#000000;">{{sharedVariables.session.table.people.length}} personnes</h4>
+      <ion-list id="maTable-list24">
+        <ion-item ng-repeat="person in sharedVariables.session.table.persons" class="item-avatar" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur({userId:person.id})">
+          <img src="{{person.photoUrl}}">
+          <h2>{{person.name}}</h2>
+        </ion-item>
+      </ion-list>
+      <div class="spacer" style="width: 283px; height: 25px;"></div>
+      <h4 id="maTable-heading21" style="color:#000000;">{{sharedVariables.session.table.pendingPeople.length}} personnes en attente</h4>
+      <ion-list id="maTable-list24">
+        <ion-item ng-repeat="pendingPerson in sharedVariables.session.table.pendingPersons" class="item-avatar" id="maTable-list-item75" ui-sref="menu.detailsUtilisateur({userId:pendingPerson.id})">
+          <img src="{{pendingPerson.photoUrl}}">
+          <h2>{{pendingPerson.name}}</h2>
+        </ion-item>
+      </ion-list>
+      <button id="maTable-button10" class="button button-balanced  button-block" ui-sref="menu.addFriendTable">Ajouter un Ami</button>
+      <div class="spacer" style="width: 283px; height: 25px;"></div>
+      <button id="maTable-button11" ng-click="goChat()" class="button button-positive  button-block">Discussion ({{sharedVariables.session.table.nbMissingMessages}})</button>
+      <button id="maTable-button12" ng-click="quitterTable()" class="button button-assertive  button-block">Quitter la Table</button>
+    </div>
+
+
+    <div ng-if="sharedVariables.session.table==null">
+      <h4 id="maTableVide-heading22" style="color:#000000;text-align:center;">Vous n'avez pas de table</h4>
+      <a ui-sref="menu.creerUneTable" id="maTableVide-button12" class="button button-positive  button-block">Créer une table</a>
+      <h4 id="maTableVide-heading23" style="color:#000000;text-align:center;">Invitations ({{tablesInvitations.length}})</h4>
+      <div ng-repeat="tablesInvitation in tablesInvitations">
+        <ion-list id="maTableVide-list27">
+          <ion-item class="item-avatar" id="maTableVide-list-item80" ui-sref="menu.detailsUtilisateur({userId:tablesInvitation.user.id})">
+            <img src="{{tablesInvitation.user.photoUrl}}">
+            <h2>{{tablesInvitation.user.name}}</h2>
+          </ion-item>
+          <ion-item class="item-thumbnail-left" id="maTableVide-list-item82" ng-click="selectInvitation(tablesInvitation.id)">
+            <img src="{{tablesInvitation.restaurant.photoUrl}}">
+            <h2>{{tablesInvitation.restaurant.name}}</h2>
+            <p>rdv : {{tablesInvitation.time}}</p>
+            <p>{{tablesInvitation.people.length}} personnes</p>
+          </ion-item>
+        </ion-list>
+        <div ng-show="invitationSelectedId==tablesInvitation.id" id="maTableVide-button-bar2" class="button-bar">
+          <a ui-sref="menu.detailsRestaurant({restaurantId:tablesInvitation.restaurant.id})" id="maTableVide-button10" class="button button-dark  button-block button-outline">Détails</a>
+          <a ng-click="choisirTable(tablesInvitation)" id="maTableVide-button13" class="button button-positive button-block">Choisir</a>
+        </div>
+        <div class="spacer" style="width: 283px; height: 25px;"></div>
+      </div>
+    </div>
+
   </ion-content>
+
 </ion-view>
+

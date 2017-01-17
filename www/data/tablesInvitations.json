@@ -1,0 +1,20 @@
+[
+  {
+    "id":1,
+    "userId":"mauriceRichard",
+    "restaurantId":"grillon",
+    "time":"13 : 00",
+    "people":["danielSeguin","virginieCointreau"],
+    "pendingPeople":["veroniquePasteur"],
+    "nbMissingMessages":2
+  },
+  {
+    "id":2,
+    "userId":"patrickLeBeau",
+    "restaurantId":"grillon",
+    "time":"12 : 30",
+    "people":["sophieLeDuc"],
+    "pendingPeople":[],
+    "nbMissingMessages":4
+  }
+]

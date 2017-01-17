@@ -5,7 +5,7 @@
     "waitingTime":3,
     "friends":["patrickLeBeau"],
     "photoUrl":"img/restaurants/castorEtPollux.jpg",
-    "description":"Description",
+    "description":"Le traditionnel restaurant INSA en self-service vous proposant plusieurs choix de menus équilibrés tout au long de la semaine - ouvert tout les midis et les soirs jusqu'à 20h - brunch le samedi midi et menu léger le dimanche soir !",
     "price":5.00,
     "location":{
       "lat":45.78109003726761,
@@ -18,7 +18,7 @@
     "waitingTime":3,
     "friends":["claireMangenot"],
     "photoUrl":"img/restaurants/prevert.jpg",
-    "description":"Description",
+    "description":"Si vous souhaiter manger rapidement car vous manquer de temps, ce restaurant INSA est là pour vous - ouvert tous les midis et les soirs de semaine jusqu'à 19h30 - sur place ou à emporter.",
     "price":5.00,
     "location":{
       "lat":45.781168601448755,
@@ -31,7 +31,7 @@
     "waitingTime":5,
     "friends":["mauriceRichard", "fabienneGentille", "sophieLeDuc"],
     "photoUrl":"img/restaurants/grillon.jpg",
-    "description":"Le Grillon Description",
+    "description":"Ce restaurant INSA vous propose tout les midis du lundi au vendredi des spécialités à base de viande grillées avec des accompagnements variés.",
     "price":5.00,
     "location":{
       "lat":45.78393324189943,
@@ -44,7 +44,7 @@
     "waitingTime":9,
     "friends":[],
     "photoUrl":"img/restaurants/olivier.jpg",
-    "description":"Description",
+    "description":"Ce restaurant INSA vous propose plusieurs spécialités italiennes - de l'antipasti à la pizza en passant par les pastas - ouvert tout les midis du lundi au vendredi.",
     "price":5.00,
     "location":{
       "lat":45.78424374099144,
@@ -57,7 +57,7 @@
     "waitingTime":15,
     "friends":[],
     "photoUrl":"img/restaurants/castorGourmand.jpg",
-    "description":"Description",
+    "description":"Le Snack Castor Gourmand vous propose des sandwichs tous les midis de 11h30 à 14h et le soir du lundi au jeudi de 18h à 20h.",
     "price":5.00,
     "location":{
       "lat":45.78397252200061,
@@ -70,7 +70,7 @@
     "waitingTime":20,
     "friends":["danielSeguin"],
     "photoUrl":"img/restaurants/piedDuSaule.jpg",
-    "description":"Description",
+    "description":"Ce restaurant INSA réservé au personnel administratif propose tout les midis en semaine un menu servi à table d'une très bonne qualité.",
     "price":5.00,
     "location":{
       "lat":45.78083189703586,
@@ -83,7 +83,7 @@
     "waitingTime":18,
     "friends":["virginieCointreau"],
     "photoUrl":"img/restaurants/astree.jpg",
-    "description":"Description",
+    "description":"Situé au pied du bâtiment l'Astre, cette Cafet'U propose un large choix de produits à consommer sur place ou à emporter (salades composées, plats du jour, pizzas, frites, sandwichs, desserts variés, boissons chaudes et froides, confiseries…) - payables en espèces ou avec Izly sur votre carte étudiante multiservices - ouvert tout les midis en semaine.",
     "price":5.00,
     "location":{
       "lat":45.78348151874679,
@@ -96,7 +96,7 @@
     "waitingTime":23,
     "friends":[],
     "photoUrl":"img/restaurants/grignote.jpg",
-    "description":"Description",
+    "description":"A deux pas du Resto'U de Jussieu, cette Cafet'U propose un large choix de produits à consommer sur place ou à emporter (salades composées, plats du jour, pizzas, frites, sandwichs, desserts variés, boissons chaudes et froides, confiseries…) - payables en espèces ou avec Izly sur votre carte étudiante multiservices - ouvert tout les midis en semaine.",
     "price":5.00,
     "location":{
       "lat":45.78062052044883,
@@ -109,7 +109,7 @@
     "waitingTime":30,
     "friends":["marcelineDupont"],
     "photoUrl":"img/restaurants/ruJussieu.jpg",
-    "description":"Description",
+    "description":"Ce grand Resto'U situé juste à côté du CROUS propose un repas équilibré composé parmi un choix d’entrées et de desserts et d’un plat chaud pour 6 points (3,25 € en 2015-2016) - les repas se payent avec le mode de paiement Izly by Crous - ouvert tout les midis en semaine.",
     "price":5.00,
     "location":{
       "lat":45.78085621464492,
@@ -122,7 +122,7 @@
     "waitingTime":30,
     "friends":["veroniquePasteur"],
     "photoUrl":"img/restaurants/ruChavanne.jpg",
-    "description":"Description",
+    "description":"Ce grand Resto'U situé à deux pas de l'Université Lyon 1 propose un repas équilibré composé parmi un choix d’entrées et de desserts et d’un plat chaud pour 6 points (3,25 € en 2015-2016) - les repas se payent avec le mode de paiement Izly by Crous - ouvert tout les midis en semaine.",
     "price":5.00,
     "location":{
       "lat":45.77878169739365,

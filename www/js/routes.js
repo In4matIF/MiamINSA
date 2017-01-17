@@ -39,12 +39,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.creerUneTable', {
-    url: '/createTable',
+  .state('menu.addFriendTable', {
+    url: '/addFriendTable',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/creerUneTable.html',
-        controller: 'creerUneTableCtrl'
+        templateUrl: 'templates/addFriendTable.html',
+        controller: 'addFriendTableCtrl'
       }
     }
   })
@@ -75,16 +75,6 @@ angular.module('app.routes', [])
       'side-menu21': {
         templateUrl: 'templates/maTable.html',
         controller: 'maTableCtrl'
-      }
-    }
-  })
-
-  .state('menu.maTableVide', {
-    url: '/noTable',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/maTableVide.html',
-        controller: 'maTableVideCtrl'
       }
     }
   })
