@@ -3,6 +3,35 @@
   background-color: #e42618;
 }
 
+.button.button-positive {
+  background-color: #e42618;
+}
+
+.button.button-positive.activated{
+  background-color: #88170e;
+}
+
+h1, h2, h3, h4, h5, div, a{
+  font-family: "Archivo Narrow", Tahoma, sans-serif;
+}
+
+#menu-list-item4 >a:first-child{
+  background-color: #e42618;
+}
+
+.item-avatar > img:first-child{
+  border: 3px solid white;
+}
+
+.item-avatar .item-content > img:first-child{
+  border: 3px solid white;
+}
+
+.h1, h2 {
+  color:white;
+}
+
+
 .title.title-center.header-item {
   color : white;
 }
@@ -27,6 +56,11 @@
 .item{
   background-color: #f2f2f2;
   outline:1px solid #dadada;
+}
+
+.card,
+.list-inset {
+  background-color: #e42618;
 }
 
 

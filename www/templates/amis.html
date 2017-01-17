@@ -4,7 +4,7 @@
     <ion-list id="amis-list11">
       <ion-item ng-repeat="connectedFriend in connectedFriends" class="item-avatar" id="amis-list-item35" ui-sref="menu.detailsUtilisateur({userId:connectedFriend.id})">
         <img src="{{connectedFriend.photoUrl}}">
-        <h2>{{connectedFriend.name}}</h2>
+        <h2dark>{{connectedFriend.name}}</h2dark>
         <p>{{connectedFriend.restaurant.name}}</p>
       </ion-item>
     </ion-list>
@@ -13,7 +13,7 @@
     <ion-list id="amis-list12">
       <ion-item ng-repeat="disconnectedFriend in disconnectedFriends" class="item-avatar" id="amis-list-item37" ui-sref="menu.detailsUtilisateur({userId:disconnectedFriend.id})">
         <img src="{{disconnectedFriend.photoUrl}}">
-        <h2>{{disconnectedFriend.name}}</h2>
+        <h2dark>{{disconnectedFriend.name}}</h2dark>
       </ion-item>
     </ion-list>
   </ion-content>
