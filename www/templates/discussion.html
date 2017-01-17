@@ -1,0 +1,11 @@
+<ion-view title="Discussion" id="page15">
+  <ion-content padding="true" class="has-header">
+    <h3 id="discussionTable-heading" style="color:#000000;">Discussion table {{restaurant.name}}</h3>
+    <ion-list id="discussionTable-list">
+      <ion-item ng-repeat="friend in restaurant.fullFriends" class="item-avatar" id="amisRestaurant-list-item61" ui-sref="menu.detailsUtilisateur({userId:friend.id})">
+        <img src="{{friend.photoUrl}}">
+        <h2>{{friend.name}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
