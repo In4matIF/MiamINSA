@@ -1,17 +1,35 @@
 <ion-view title="Map" id="page4">
   <ion-content padding="true" class="has-header">
-    <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
-      <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+    <div style="margin: 0px;height: 400px;">
+      <ng-map style="height: 100%;" center="[{{restaurants[0].location.lat}},{{restaurants[0].location.long}}]">
+        <marker ng-repeat="restaurant in restaurants" position="[{{restaurant.location.lat}},{{restaurant.location.long}}]" on-click="vm.selectRestaurant()"></marker>
+      </ng-map>
     </div>
-    <ion-list id="map-list7">
-      <ion-item class="item-thumbnail-left balanced" id="map-list-item20" ui-sref="menu.detailsRestaurant">
-        <img src="img/crxmQIvT5md2Cf4a4hwb_Grillon.jpg">
-        <h2balanced>Le Grillon
-          <p>3 min d'attente</p>
+    <ion-list ng-if="selectedRestaurant!=null" id="map-list7">
+      <ion-item ng-if="selectedRestaurant.waitingTime<=5" class="item-thumbnail-left item-icon-right balanced" id="map-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:selectedRestaurant.id})">
+        <img src="{{selectedRestaurant.photoUrl}}">
+        <h2balanced>{{selectedRestaurant.name}}
+          <p>{{selectedRestaurant.waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
         </h2balanced>
       </ion-item>
-      <ion-item class="item-avatar" id="map-list-item47">
-        <h2dark>3 amis y mangent</h2dark>
+      <ion-item ng-if="selectedRestaurant.waitingTime>5 && selectedRestaurant.waitingTime<=10" class="item-thumbnail-left item-icon-right energized" id="map-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:selectedRestaurant.id})">
+        <img src="{{selectedRestaurant.photoUrl}}">
+        <h2energized>{{selectedRestaurant.name}}
+          <p>{{selectedRestaurant.waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2energized>
+      </ion-item>
+      <ion-item ng-if="selectedRestaurant.waitingTime>10" class="item-thumbnail-left item-icon-right assertive" id="map-list-item14" ui-sref="menu.detailsRestaurant({restaurantId:selectedRestaurant.id})">
+        <img src="{{selectedRestaurant.photoUrl}}">
+        <h2assertive>{{selectedRestaurant.name}}
+          <p>{{selectedRestaurant.waitingTime}} minutes d'attente</p>
+          <i class="icon ion-android-time"></i>
+        </h2assertive>
+      </ion-item>
+      <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant({restaurantId:selectedRestaurant.id})">
+        <i class="icon ion-person-stalker"></i>
+        {{selectedRestaurant.friends.length}} amis y mangent
       </ion-item>
     </ion-list>
   </ion-content>
