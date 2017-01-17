@@ -34,7 +34,8 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/map.html',
-        controller: 'mapCtrl'
+        controller: 'mapCtrl',
+        controllerAs: 'vm'
       }
     }
   })
@@ -147,16 +148,16 @@ angular.module('app.routes', [])
       }
     }
   })
-  
-  .state('menu.discussion', { 
-    url: '/discussion/:restaurantId', 
-    views: { 
-      'side-menu21': { 
-        templateUrl: 'templates/discussion.html', 
-        controller: 'discussionCtrl' 
-      } 
-    } 
-  }) 
+
+  .state('menu.discussion', {
+    url: '/discussion/:restaurantId',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/discussion.html',
+        controller: 'discussionCtrl'
+      }
+    }
+  })
 
 $urlRouterProvider.otherwise('/menuLateral/restaurants')
 

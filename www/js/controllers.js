@@ -88,12 +88,25 @@ function ($scope, $stateParams, sharedVariables, ionicTimePicker, $state) {
 
 }])
 
-.controller('mapCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('mapCtrl', ['$scope', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams, sharedVariables) {
+  var vm = this;
 
+  sharedVariables.getRestaurants.success(function (restaurants) {
+    $scope.restaurants = restaurants;
+  });
 
+  $scope.selectedRestaurant = null;
+
+  vm.selectRestaurant = function(){
+    var lat = this.getPosition().lat();
+    var long = this.getPosition().lng();
+    $scope.selectedRestaurant = _.filter($scope.restaurants,function (restaurant) {
+      return restaurant.location.lat == lat && restaurant.location.long == long;
+    })[0];
+  }
 }])
 
 .controller('addFriendTableCtrl', ['$scope', '$state', '$stateParams', 'sharedVariables',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -329,16 +342,15 @@ function ($scope, $stateParams, sharedVariables) {
     })[0];
     sharedVariables.getUsers.success(function (users) {
       $scope.restaurant.fullFriends = _.filter(users,function (user) {
-        console.log($scope.restaurant)
         return $scope.restaurant.friends.indexOf(user.id) > -1;
       });
     })
   })
 }])
 
-.controller('discussionCtrl', ['$scope', '$stateParams',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller 
-// You can include any angular dependencies as parameters for this function 
-// TIP: Access Route Parameters for your page via $stateParams.parameterName 
-function ($scope, $stateParams) { 
-   
-}]); 
+.controller('discussionCtrl', ['$scope', '$stateParams',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+}]);

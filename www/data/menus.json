@@ -4,13 +4,13 @@
       "id": "carottesRapees",
       "name": "Carottes Rapées",
       "photoUrl": "img/menus/carottesRapees.jpg",
-      "description": ""
+      "description": "La traditionnelle salade de carottes râpées agrémenté de quelques olives et d'un peu de persil"
     },
     {
       "id":"saladeGrecque",
       "name":"Salade Grecque",
       "photoUrl":"img/menus/saladeGrecque.jpg",
-      "description":""
+      "description":"Quoi de plus rafraichissant que cette salade composé de tomate, de concombre, d'olives et de quelques morceaux de feta"
     }
   ],
   "plats": [
@@ -18,19 +18,19 @@
       "id":"chilliConCarne",
       "name":"Chilli Con Carne",
       "photoUrl":"img/menus/chilliConCarne.jpg",
-      "description":""
+      "description":"Un savant mélange de morceaux de boeuf et de haricots rouges le tout accompagné de sa sauce chili pour un goût légèrement épicé"
     },
     {
       "id":"coteDePorc",
       "name":"Côte de Porc",
       "photoUrl":"img/menus/coteDePorc.jpg",
-      "description":""
+      "description":"Une côte de porc cuite sur le grill accompagnée de quelques pommes de terre pour un plat complet et délicieusement simple"
     },
     {
       "id":"lasagnes",
       "name":"Lasagnes",
       "photoUrl":"img/menus/lasagnes.jpg",
-      "description":""
+      "description":"La spécialité italienne à base de pâtes, viande haché et de sauce tomate ici cuisiné en gratin devrait satisfaire chaque estomac"
     }
   ],
   "desserts": [
@@ -38,13 +38,13 @@
       "id":"clementines",
       "name":"Clémentines",
       "photoUrl":"img/menus/clementines.jpg",
-      "description":""
+      "description":"Une douce envie de sucré au dessert ? La clémentine est le fruit idéal pour vous"
     },
     {
       "id":"cremeBrulee",
       "name":"Crême Brulée",
       "photoUrl":"img/menus/cremeBrulee.jpg",
-      "description":""
+      "description":"Un dessert gourmand, mélange sucré de crème et d'oeufs, pour plus d'énergie dans la journée"
     }
   ]
 }
