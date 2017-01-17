@@ -63,5 +63,16 @@ h1, h2, h3, h4, h5, div, a{
   background-color: #e42618;
 }
 
+.chat-div {
+	background-color : #F2F2F2;
+	outline : 1px solid #dadada;
+	margin  : 10px;
+	padding : 10px;
+}
 
+.chat-div-user {
+	background-color : #E42618;
+	color : white;
+	margin-left : 30px;
+}
 
