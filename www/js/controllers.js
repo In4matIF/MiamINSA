@@ -182,6 +182,9 @@ function ($scope, $stateParams, sharedVariables) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $state, sharedVariables) {
   $scope.sharedVariables = sharedVariables;
+  sharedVariables.getCurrentUser.success(function (currentUser) {
+    $scope.currentUser = currentUser;
+  });
 
   $scope.$watch(
     $scope.sharedVariables.session.table,
