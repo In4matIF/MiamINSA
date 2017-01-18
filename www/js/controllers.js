@@ -4,6 +4,7 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, sharedVariables) {
+  $scope.sharedVariables = sharedVariables;
   sharedVariables.getRankedRestaurants.success(function (rankedRestaurants) {
     sharedVariables.getRestaurants.success(function (restaurants) {
       $scope.suggestionRestaurant = _.filter(restaurants,function (restaurant) {
@@ -284,7 +285,16 @@ function ($scope, $stateParams, sharedVariables, $state) {
     sharedVariables.session.isFacebook = false;
     sharedVariables.session.isGoogle = false;
     $state.go('login');
-  }
+  };
+  $scope.connectINSA = function () {
+    sharedVariables.session.isINSA = true;
+  };
+  $scope.connectFacebook = function () {
+    sharedVariables.session.isFacebook = true;
+  };
+  $scope.connectGoogle = function () {
+    sharedVariables.session.isGoogle = true;
+  };
 }])
 
 .controller('loginCtrl', ['$scope', '$stateParams', 'sharedVariables', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -312,6 +322,7 @@ function ($scope, $stateParams, sharedVariables, $state) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, sharedVariables) {
+  $scope.sharedVariables = sharedVariables;
   sharedVariables.getRestaurants.success(function (restaurants) {
     $scope.restaurant = _.filter(restaurants,function (restaurant) {
       return restaurant.id == $stateParams.restaurantId;
@@ -355,6 +366,7 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, sharedVariables) {
+  $scope.sharedVariables = sharedVariables;
   sharedVariables.getRestaurants.success(function (restaurants) {
     $scope.restaurant = _.filter(restaurants,function (restaurant) {
       return $stateParams.restaurantId == restaurant.id;

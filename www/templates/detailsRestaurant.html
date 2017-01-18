@@ -23,7 +23,7 @@
       </ion-item>
       <ion-item class="item-icon-left" id="detailsRestaurant-list-item34">
         <i class="icon ion-social-euro"></i>{{restaurant.price}} euros</ion-item>
-      <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant({restaurantId:restaurant.id})">
+      <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle)"  class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant({restaurantId:restaurant.id})">
         <i class="icon ion-person-stalker"></i>{{restaurant.friends.length}} amis</ion-item>
       <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item26" ui-sref="menu.menusRestaurant({restaurantId:restaurant.id})">
         <i class="icon ion-android-map"></i>Menus</ion-item>

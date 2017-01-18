@@ -5,6 +5,9 @@
         <img src="{{currentUser.photoUrl}}">
         <h2>{{currentUser.name}}</h2>
       </ion-item>
+      <a ng-if="!sharedVariables.session.isINSA" ng-click="connectINSA()" id="login-button1" class="button button-stable  button-block">Connexion INSA</a>
+      <a ng-if="!sharedVariables.session.isFacebook" ng-click="connectFacebook()" id="login-button2" style="background-color: #3B5998;" class="button button-positive button-block">Facebook</a>
+      <a ng-if="!sharedVariables.session.isGoogle" ng-click="connectGoogle()" id="login-button3" style="background-color: #EA4335;" class="button button-assertive  button-block">Google</a>
       <ion-toggle toggle-class="toggle-positive" ng-model="currentUser.preferences.notifications" id="parametres-toggle2">Autoriser notifications</ion-toggle>
     </ion-list>
     <h3 id="parametres-heading12" style="color:#000000;">Restaurants favoris</h3>

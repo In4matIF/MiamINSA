@@ -23,7 +23,7 @@
           <i class="icon ion-android-time"></i>
         </h2assertive>
       </ion-item>
-      <ion-item class="item-icon-left" id="restaurants-list-item49">
+      <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle)" class="item-icon-left" id="restaurants-list-item49">
         <i class="icon ion-person-stalker"></i>{{suggestionRestaurant[0].friends.length}} amis</ion-item>
     </ion-list>
     <div class="spacer" style="width: 300px; height: 28px;"></div>
@@ -51,7 +51,7 @@
             <i class="icon ion-android-time"></i>
           </h2assertive>
         </ion-item>
-        <ion-item class="item-icon-left" id="restaurants-list-item50">
+        <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle)" class="item-icon-left" id="restaurants-list-item50">
           <i class="icon ion-person-stalker"></i>{{rankedRestaurant.friends.length}} amis
         </ion-item>
 		<div class="spacer" style="width: 300px; height: 28px;"></div>
@@ -82,7 +82,7 @@
             <i class="icon ion-android-time"></i>
           </h2assertive>
         </ion-item>
-        <ion-item class="item-icon-left" id="restaurants-list-item50">
+        <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle)"  class="item-icon-left" id="restaurants-list-item50">
           <i class="icon ion-person-stalker"></i>{{unrankedRestaurant.friends.length}} amis
         </ion-item>
       </div>
