@@ -14,7 +14,7 @@
     </ion-header-bar>
     <ion-content padding="false" class="side-menu-right has-header ">
       <ion-list id="menu-list1">
-        <ion-item class="item-avatar" id="menu-list-item4" ui-sref="menu.parametres" menu-close="">
+        <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle || sharedVariables.session.isINSA)" class="item-avatar" id="menu-list-item4" ui-sref="menu.parametres" menu-close="">
           <img src="{{currentUser.photoUrl}}">
           <h2>{{currentUser.name}}</h2>
           <h3 ng-if="sharedVariables.session.isINSA" style="color: white;">Solde INSA : {{currentUser.soldeINSA}} €</h3>
