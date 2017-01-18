@@ -5,7 +5,7 @@
         <img src="{{user.photoUrl}}">
         <h2dark>{{user.name}}</h2dark>
       </ion-item>
-      <div class=" item item-image">
+      <div ng-if="user.restaurant" class=" item item-image">
         <img src="{{user.restaurant.photoUrl}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
       <ion-item ng-if="user.restaurant.waitingTime<=5" class="item-icon-left balanced" id="detailsUtilisateur-list-item42" ui-sref="menu.detailsRestaurant({restaurantId:user.restaurant.id})">
