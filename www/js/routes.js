@@ -155,7 +155,7 @@ angular.module('app.routes', [])
     }
   })
 
-$urlRouterProvider.otherwise('/menuLateral/restaurants')
+$urlRouterProvider.otherwise('/loginPage')
 
 
 

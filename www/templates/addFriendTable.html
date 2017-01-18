@@ -18,10 +18,10 @@
       <div class="spacer" style="width: 300px; height: 23px;"></div>
       <h4 id="amis-heading8" style="color:#000000;">Amis déconnectés</h4>
       <ion-list id="amis-list12">
-        <ion-item ng-repeat="disconnectedFriend in disconnectedFriends | filter:{name:searchText}" class="item-avatar item-icon-right" id="amis-list-item37">
+        <ion-item ng-repeat="disconnectedFriend in disconnectedFriends | filter:{name:searchText}" class="item-avatar item-icon-right" id="amis-list-item37" ui-sref="menu.detailsUtilisateur({userId:disconnectedFriend.id})">
           <img src="{{disconnectedFriend.photoUrl}}">
-          <h2>{{disconnectedFriend.name}}</h2>
-          <i class="icon balanced ion-plus" ng-click="addFriend(connectedFriend)"></i>
+          <h2dark>{{disconnectedFriend.name}}</h2dark>
+          <i class="icon balanced ion-plus" ng-click="addFriend($event,disconnectedFriend)"></i>
         </ion-item>
       </ion-list>
     </form>

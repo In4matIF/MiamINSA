@@ -303,6 +303,9 @@ function ($scope, $stateParams, sharedVariables, $state) {
     sharedVariables.session.isGoogle = true;
     $state.go('menu.restaurants');
   };
+  $scope.connectNoAccount = function () {
+    $state.go('menu.restaurants');
+  };
 }])
 
 .controller('detailsRestaurantCtrl', ['$scope', '$stateParams', 'sharedVariables', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
