@@ -27,7 +27,7 @@
           <i class="icon ion-android-time"></i>
         </h2assertive>
       </ion-item>
-      <ion-item class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant({restaurantId:selectedRestaurant.id})">
+      <ion-item ng-if="(sharedVariables.session.isFacebook || sharedVariables.session.isGoogle)" class="item-icon-left dark" id="detailsRestaurant-list-item25" ui-sref="menu.amisRestaurant({restaurantId:selectedRestaurant.id})">
         <i class="icon ion-person-stalker"></i>
         {{selectedRestaurant.friends.length}} amis y mangent
       </ion-item>
